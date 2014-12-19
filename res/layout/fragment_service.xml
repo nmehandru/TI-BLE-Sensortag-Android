@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ServiceActivity" >
+
+    <TextView
+        android:id="@+id/txt_uuid"
+        style="@style/devaddrStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:singleLine="true" />
+
+    <ListView
+        android:id="@+id/char_list"
+        style="@style/devlistStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:choiceMode="singleChoice"
+        android:padding="3dp" />
+
+    <EditText
+        android:id="@+id/txt_data"
+        style="@style/dataStyle"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/write_hint"
+        android:inputType="textCapCharacters|textNoSuggestions|textVisiblePassword"
+        android:maxLength="40" />
+
+    <TextView
+        android:id="@+id/txt_status"
+        style="@style/statusStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:gravity="center_horizontal|center_vertical" />
+
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboardview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="true"
+            android:gravity="center"
+            android:onClick="onBtnRead"
+            android:text="@string/btn_txtRead" />
+
+        <Button
+            android:id="@+id/btn_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:gravity="center"
+            android:onClick="onBtnWrite"
+            android:text="@string/btn_txtWrite" />
+
+        <CheckBox
+            android:id="@+id/btn_notify"
+            style="@style/checkboxStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:enabled="true"
+            android:gravity="center"
+            android:onClick="onBtnNotify"
+            android:text="@string/btn_txtNotify" />
+    </LinearLayout>
+
+</LinearLayout>

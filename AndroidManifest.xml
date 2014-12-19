@@ -1,0 +1,48 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ti.android.ble.devicemonitor"
+    android:versionCode="5"
+    android:versionName="1.11" >
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
+    
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/tible"
+        android:label="@string/app_name" >
+        <service
+            android:name="ti.android.ble.common.BluetoothLeService"
+            android:enabled="true" />
+
+        <activity
+            android:name="MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="DeviceActivity"
+            android:parentActivityName="MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ServiceActivity"
+            android:parentActivityName="DeviceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="FwUpdateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="FileActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
